@@ -7,26 +7,31 @@ int main(string[] args)
 {
  try
 	{
-  void printHelp()
+  void printHelp(bool full = false)
 		{
-			writeln("dfiles tools v0.1 Copyright (C) 2020 by Max Goldaev");
-   writeln("Usage: dfiles <dirName>");
+			writeln("dfiles tool v0.2 Copyright (C) 2020 by Max Goldaev");
+   writeln("Usage: dfiles [-a] <dirName>");
+			if(full)
+			 writeln("  -a\tShow input arguments");
 		}
 
-		if(args.length != 2)
+		if(args.length < 2)
 		{
 		 printHelp();
 			return 1;
 		}
 
-		string dname = args[1];
-		if(dname == "--help" || dname == "-h")
+		string dname = args[$-1];
+		if(args[1] == "--help" || args[1] == "-h")
 		{
-			printHelp();
+			printHelp(true);
 			return 0;
 		}
+  if(args[1] == "-a")
+		 writeln("Arguments: ", args);
 
-   if(exists(dname) == false)
+
+  if(exists(dname) == false)
 		{
    writefln("Error!!! Directory [%s] not exists!", dname);
 			return 2;
@@ -41,6 +46,8 @@ int main(string[] args)
   foreach(DirEntry de; iter)
 		 if(de.isFile)
 			 stdout.write(relativePath(de.name, dname), " ");
+  writeln("");
+  stdout.flush();
 
   return 0;
 	}

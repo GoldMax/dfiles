@@ -15,9 +15,9 @@
 			"problemMatcher": ["$dmd"]
 		},
 		{
-			"label": "build_relise",
+			"label": "build_release",
 			"type": "shell",
-			"command": "clear & dmd -m64 -O -od=./bin -of=./bin/dfiles main.d",
+			"command": "clear & dmd -m64 -O -release -od=./bin -of=./bin/dfiles main.d",
 			"group": {
 				"kind": "build",
 				"isDefault": true
