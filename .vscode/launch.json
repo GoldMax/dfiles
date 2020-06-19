@@ -9,8 +9,8 @@
 			"type": "gdb",
 			"request": "launch",
 			"preLaunchTask": "build_debug",
-			"target": "./bin/dfiles",
-			"arguments": "/home/goldg/DProj/Test/src",
+			"target": "./bin/dfiles_debug",
+			"arguments": "/home/gold/DProj/Test/src",
 			"cwd": "${workspaceRoot}",
 			"valuesFormatting": "parseText",
 			"internalConsoleOptions": "openOnSessionStart"
