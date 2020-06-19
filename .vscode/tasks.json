@@ -6,7 +6,7 @@
 		{
 			"label": "build_debug",
 			"type": "shell",
-			"command": "clear & dmd -debug -g -m64 main.d",
+			"command": "clear & dmd -debug -g -m64 -od=./bin -of=./bin/dfiles main.d",
 			"problemMatcher": [],
 			"group": {
 				"kind": "build",
